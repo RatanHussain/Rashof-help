@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background: url(Rashof\ Images.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    .container{
+        position: relative;
+        height: 450px;
+        width: 550px;
+        margin: auto;
+        background: transparent;
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        border: 1px solid #fff;
+        margin-top: 10%;
+        font-weight: bold;
+        .sign{
+            color: aqua;
+            margin-top: -23px;
+            margin-left: 400px;
+            font-size: .8rem;
+        }
+        .input-sec{
+            display: flex;
+            margin:30px;
+            text-align: center;
+            .in{
+                margin: 5px;
+                .labeltext{
+                    color: rgb(255, 255, 255);
+                    font-size: 1.2rem;
+                    padding-bottom: 10px;
+                    text-shadow: 3px 3px 5px #000;
+                }
+                & input{
+                    width: 150px;
+                    height: 30px;
+                    border-radius: 10px ;
+                    outline: none;
+                    padding: 0 3px;
+                }
+            }
+        }
+        .output-sec{
+            width: 75%;
+            height: 70%;
+            margin: auto;
+            justify-content: space-around;
+            & button{
+                justify-content: center;
+                height: 50px;
+                width: 180px;
+                margin: 20px 10px;
+                font-size: 1.2rem;
+                font-weight: bold;
+                border-radius: 30px;
+                outline: none;
+                border: 1px solid #000;
+                background-color: aquamarine;
+                cursor: pointer;
+                transition: all .4s;
+                &:hover{
+                    background-color: #d9e717;
+                }
+
+            }
+        }
+
+    }
+}

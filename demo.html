@@ -1,0 +1,33 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dynamic Link Example</title>
+	</head>
+	<body>
+		<h1>Create a Link</h1>
+		<label for="input1">Text 1:</label>
+		<input type="text" id="input1" /><br />
+		<label for="input2">Text 2:</label>
+		<input type="text" id="input2" /><br />
+		<button onclick="visitLink()">Visit Link</button>
+
+		<script>
+			function visitLink() {
+				var text1 = document.getElementById('input1').value;
+				var text2 = document.getElementById('input2').value;
+
+				// Create a URL using the input text
+				var url =
+					'https://web.zid.sa/orders?search=' +
+					encodeURIComponent(text1) +
+					'&text2=' +
+					encodeURIComponent(text2);
+
+				// Navigate to the generated URL
+				window.location.href = url;
+			}
+		</script>
+	</body>
+</html>
