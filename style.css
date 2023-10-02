@@ -40,11 +40,17 @@ body{
                     text-shadow: 3px 3px 5px #000;
                 }
                 & input{
+                    box-shadow: 5px 5px 10px #00000060 , -5px -5px 10px #00000060;
                     width: 150px;
                     height: 30px;
                     border-radius: 10px ;
                     outline: none;
-                    padding: 0 3px;
+                    padding: 0 5px;
+                    transition: all .5s;
+                    &:focus{
+                        background-color: #3841bb77;
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -55,21 +61,25 @@ body{
             justify-content: space-around;
             & button{
                 justify-content: center;
-                height: 50px;
-                width: 180px;
+                height: 45px;
+                width: 170px;
                 margin: 20px 10px;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-weight: bold;
                 border-radius: 30px;
                 outline: none;
-                border: 1px solid #000;
+                border: 1px solid #fff;
                 background-color: aquamarine;
+                box-shadow: 5px 5px 10px #00000060 , -5px -5px 10px #00000060;
                 cursor: pointer;
                 transition: all .4s;
-                &:hover{
-                    background-color: #d9e717;
+                & img{
+                    height: 30px;
                 }
-
+                &:hover{
+                    background-color: rgba(0, 255, 170, 0.61);
+                    transform: scale(1.1);
+                }
             }
         }
 
