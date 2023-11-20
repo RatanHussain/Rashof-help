@@ -2,86 +2,67 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body{
-    height: 100vh;
-    width: 100%;
-    background: url(Rashof\ Images.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-    .container{
-        position: relative;
-        height: 450px;
-        width: 550px;
-        margin: auto;
-        background: transparent;
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        border: 2.1px solid #fff;
-        margin-top: 10%;
-        font-weight: bold;
-        .sign{
-            color: aqua;
-            margin-top: -23px;
-            margin-left: 400px;
-            font-size: .8rem;
-        }
-        .input-sec{
-            display: flex;
-            margin:30px;
-            text-align: center;
-            .in{
-                margin: 5px;
-                .labeltext{
-                    color: rgb(255, 255, 255);
-                    font-size: 1.2rem;
-                    padding-bottom: 10px;
-                    text-shadow: 3px 3px 5px #000;
-                }
-                & input{
-                    box-shadow: 5px 5px 10px #00000060 , -5px -5px 10px #00000060;
-                    width: 150px;
-                    height: 30px;
-                    border-radius: 10px ;
-                    outline: none;
-                    padding: 0 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    & body{
+        background-color: pink;
+        .container{
+            padding: 40px;
+            & textarea{
+                background-color: #eeeeee;
+                border-radius: 10px;
+                padding: 20px;
+                font-size: 1rem;
+                outline: 2px solid yellowgreen;
+            }
+            .btn{
+                display: inline;
+                position: absolute;
+                margin: 20px;
+                #generateLinks{
+                    height: 40px;
+                    border: 1px solid blueviolet;
+                    border-radius: 5px;
+                    font-size: 1.1rem;
+                    width: 180px;
                     transition: all .5s;
-                    &:focus{
-                        background-color: #3841bb77;
-                        color: #fff;
+                    &:hover{
+                        background-color: aquamarine;
+                    }
+                }
+
+                .output-sec{
+                    width: 600px;
+                    margin-top: 10px;
+
+                    #insidebtn{
+                        margin: 10px;
+                        height: 30px;
+                        border: 1px solid blueviolet;
+                        border-radius: 5px;
+                        font-size: 1.1rem;
+                        width: 150px;
+                        transition: all .5s;
+                        &:hover{
+                            background-color: rgb(229, 127, 255);
+                        }
+                        & img{
+                            height: 20px;
+                        }
                     }
                 }
             }
-        }
-        .output-sec{
-            width: 75%;
-            height: 70%;
-            margin: auto;
-            justify-content: space-around;
-            & button{
-                justify-content: center;
-                height: 45px;
-                width: 170px;
-                margin: 20px 10px;
-                font-size: 1rem;
-                font-weight: bold;
-                border-radius: 30px;
-                outline: none;
-                border: 1px solid #fff;
-                background-color: aquamarine;
-                box-shadow: 5px 5px 10px #00000060 , -5px -5px 10px #00000060;
-                cursor: pointer;
-                transition: all .4s;
-                & img{
-                    height: 30px;
-                }
-                &:hover{
-                    background-color: rgba(0, 255, 170, 0.61);
-                    transform: scale(1.1);
-                }
+
+            #linksContainer{
+                display: inline;
+                height: 820px;
+                width: 60%;
+                background-color: #f7eeee;
+                position: absolute;
+                margin: 180px 40px;
+                border-radius: 10px;
+                padding: 20px;
+                line-height: 28px;
             }
         }
-
     }
 }

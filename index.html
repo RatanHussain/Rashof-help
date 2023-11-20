@@ -5,101 +5,34 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
 		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<div class="container">
-			<div class="input-sec">
-				<div class="in order-sec">
-					<label for="orderno" class="labeltext">Order Number</label>
-					<input type="number" name="orderno" id="orderno" />
-				</div>
-				<div class="in awb-sec">
-					<label for="awbno" class="labeltext">AWB Number</label>
-					<input type="text" name="awbno" id="awbno" />
-				</div>
-				<div class="in track-sec">
-					<label for="trakno" class="labeltext">Trakiing Number</label>
-					<input type="text" name="trakno" id="trakno" />
+			<textarea
+				id="dataTextarea"
+				cols="25"
+				rows="50"
+				placeholder="Enter all AWB here"></textarea>
+			<div class="btn">
+				<button id="generateLinks">Generate Links Bulk</button>
+				<div class="output-sec">
+					<button id="insidebtn" onclick="orderNo()">
+						<img src="zid-logo.svg" alt="" />Zid Search
+					</button>
+					<button id="insidebtn" onclick="invoice()">
+						<img src="zid-logo.svg" alt="" />Zid Invoice
+					</button>
+					<button id="insidebtn" onclick="AwbNo()">Fastcoo Search</button>
+					<button id="insidebtn" onclick="TrakNo()">Track PostAge</button>
+					<button id="insidebtn" onclick="Traktamex()">Track Tamex</button>
+					<button id="insidebtn" onclick="Label()">Print Label</button>
 				</div>
 			</div>
-			<div class="output-sec">
-				<button onclick="orderNo()"><img src="zid-logo.svg" alt="">Zid Search</button>
-				<button onclick="invoice()"><img src="zid-logo.svg" alt="">Zid Invoice</button>
-				<button onclick="AwbNo()">Fastcoo Search</button>
-				<button onclick="TrakNo()">Track PostAge</button>
-				<button onclick="Traktamex()">Track Tamex</button>
-				<button onclick="Label()">Print Label</button>
-			</div>
-			<p class="sign">MD: RATAN MIA</p>
+			<div id="linksContainer">Link will show here...!</div>
 		</div>
 
-		<script>
-			function orderNo() {
-				var orderno = document.getElementById('orderno').value;
-
-				var url =
-					'https://web.zid.sa/orders?search=' + encodeURIComponent(orderno);
-
-				// window.location.href = url;
-				window.open(url, '_blank');
-			}
-
-			function invoice() {
-				var orderno = document.getElementById('orderno').value;
-
-				var url =
-					'https://web.zid.sa/orders/invoices?order_id=' +
-					encodeURIComponent(orderno);
-
-				// window.location.href = url;
-				window.open(url, '_blank');
-			}
-
-			function AwbNo() {
-				var awbno = document.getElementById('awbno').value;
-
-				var url =
-					'https://rashof.fastcoo-solutions.com/fm/TrackingDetails/' +
-					encodeURIComponent(awbno);
-
-				// window.location.href = url;
-				window.open(url, '_blank');
-			}
-
-			function TrakNo() {
-				var trakno = document.getElementById('trakno').value;
-
-				var url =
-					'https://postagexp.com/en/track-order-post?track_number=' +
-					encodeURIComponent(trakno);
-
-				// window.location.href = url;
-				window.open(url, '_blank');
-			}
-
-			function Traktamex() {
-				var trakno = document.getElementById('trakno').value;
-
-				var url =
-					'https://www.tamex.com.sa/track/' + encodeURIComponent(trakno);
-
-				// window.location.href = url;
-				window.open(url, '_blank');
-			}
-
-			function Label() {
-				var awbno = document.getElementById('awbno').value;
-
-				var url =
-					'https://rashof.fastcoo-solutions.com/fm/assets/all_labels/' +
-					encodeURIComponent(awbno) +
-					encodeURIComponent('.pdf');
-
-				// window.location.href = url;
-				window.open(url, '_blank');
-			}
-		</script>
+		<script src="./index.js"></script>
 	</body>
 </html>
