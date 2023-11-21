@@ -25,6 +25,33 @@ document.getElementById('generateLinks').addEventListener('click', () => {
     });
 });
 
+document.getElementById('generateLinksDal').addEventListener('click', () => {
+    let dataTextarea = document.getElementById('dataTextarea');
+    let linksContainer = document.getElementById('linksContainer');
+
+    // Get data from textarea and split it into an array
+    let data = dataTextarea.value.split('\n').filter(Boolean);
+
+    let first = "https://rashof.fastcoo-solutions.com/fm/Printpicklist3PL_bulk/";
+    let last = "/22";
+
+    // Clear previous links
+    linksContainer.innerHTML = '';
+
+    // Generate and append new links
+    data.forEach((label) => {
+        let atag = document.createElement('a');
+        let tag = first + label + last;
+        atag.innerHTML = tag;
+        atag.href = tag;
+        atag.target = "_blank";
+
+        // Append the link to the container
+        linksContainer.appendChild(atag);
+        linksContainer.appendChild(document.createElement('br')); // Optional: add line break
+    });
+});
+
 
 // other section
 
