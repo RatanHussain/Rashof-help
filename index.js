@@ -1,4 +1,4 @@
-
+// selet all element here.....
 let aramex = document.querySelector('#aramex');
 let tamex = document.querySelector('#tamex');
 let jonex = document.querySelector('#jonex');
@@ -10,20 +10,38 @@ let linksContainer = document.getElementById('linksContainer');
 let allLinks = 'https://rashof.fastcoo-solutions.com/fm/Printpicklist3PL/';
 
 
-function makeLink(event){
-    if(dataTextarea.value === ''){
-        linksContainer.innerHTML = 'Please enter a pickup Id.......!'
+
+// style here
+function style1(){
+         linksContainer.innerHTML = 'Please enter a pickup Id.......!';
         linksContainer.style.color = 'red';
-        linksContainer.style.scale = '1.01';
+        dataTextarea.style.scale = '1.01';
         linksContainer.style.fontSize = '18px';
         linksContainer.style.transition = 'all .5s';
-        setTimeout(() => {
-            linksContainer.innerHTML = 'Link will show here...!'
-            linksContainer.style.color = 'black'
-            linksContainer.style.scale = '1';
-            linksContainer.style.transition = 'all .5s'
+        dataTextarea.style.outline = '5px solid red';
+        dataTextarea.style.color = 'red';
+        dataTextarea.innerHTML = 'Please fill me.';
+        dataTextarea.style.transition = 'all .5s';
 
-        }, 2000);
+        setTimeout(() => {
+            linksContainer.innerHTML = 'Link will show here...!';
+            linksContainer.style.color = 'black';
+            dataTextarea.style.scale = '1';
+            linksContainer.style.transition = 'all .5s';
+            dataTextarea.style.outline = '';
+            dataTextarea.style.color = '';
+            dataTextarea.style.transition = 'all .5s';
+            dataTextarea.innerHTML = '';
+
+        }, 1000);
+}
+
+
+// pickup list bulk print here
+function makeLink(event){
+    if(dataTextarea.value === ''){
+        style1();
+
     }else{
         let url = allLinks + dataTextarea.value + "/" + event.target.value;
          window.open(url, '_blank');
@@ -38,21 +56,12 @@ businessFlow.addEventListener('click' , makeLink);
 dal.addEventListener('click' , makeLink);
 
 
+
+
+// Generate bulk link for all courier
 document.getElementById('generateLinks').addEventListener('click', () => {
-    if(dataTextarea.value == ''){
-        linksContainer.innerHTML = 'Please enter AWB number...!';
-        linksContainer.style.scale = '1.01'
-        linksContainer.style.fontSize = '18px'
-        linksContainer.style.transition = 'all .5s'
-        linksContainer.style.color = 'red'
-        setTimeout(() => {
-            linksContainer.innerHTML = 'Link will show here...!'
-            linksContainer.style.color = 'black'
-            linksContainer.style.scale = ''
-            linksContainer.style.transition = 'all .5s'
-
-        }, 2000);
-
+    if(dataTextarea.value === ''){
+        style1();
     }else{
         let dataTextarea = document.getElementById('dataTextarea');
     let linksContainer = document.getElementById('linksContainer');
@@ -81,20 +90,11 @@ document.getElementById('generateLinks').addEventListener('click', () => {
     }
 });
 
+
+// Generate bulk link for Dal only
 document.getElementById('generateLinksDal').addEventListener('click', () => {
     if(dataTextarea.value === ''){
-        linksContainer.innerHTML = 'Please enter AWB number...!';
-        linksContainer.style.scale = '1.01'
-        linksContainer.style.fontSize = '18px'
-        linksContainer.style.transition = 'all .5s'
-        linksContainer.style.color = 'red'
-        setTimeout(() => {
-            linksContainer.innerHTML = 'Link will show here...!'
-            linksContainer.style.color = 'black'
-            linksContainer.style.scale = ''
-            linksContainer.style.transition = 'all .5s'
-
-        }, 2000);
+        style1();
     }else{
         let dataTextarea = document.getElementById('dataTextarea');
     let linksContainer = document.getElementById('linksContainer');
@@ -125,21 +125,10 @@ document.getElementById('generateLinksDal').addEventListener('click', () => {
 });
 
 
-
+// additional option for work smart
 function orderNo(event) {
     if(dataTextarea.value === ''){
-        linksContainer.innerHTML = 'Please enter AWB number...!';
-        linksContainer.style.scale = '1.01'
-        linksContainer.style.fontSize = '18px'
-        linksContainer.style.transition = 'all .5s'
-        linksContainer.style.color = 'red'
-        setTimeout(() => {
-            linksContainer.innerHTML = 'Link will show here...!'
-            linksContainer.style.color = 'black'
-            linksContainer.style.scale = ''
-            linksContainer.style.transition = 'all .5s'
-
-        }, 2000);
+        style1();
     }else{
         var orderno = document.getElementById('dataTextarea').value;
         var url = event + encodeURIComponent(orderno);
@@ -149,18 +138,7 @@ function orderNo(event) {
 }
 function print(event , format) {
     if(dataTextarea.value === ''){
-        linksContainer.innerHTML = 'Please enter AWB number...!';
-        linksContainer.style.scale = '1.01'
-        linksContainer.style.fontSize = '18px'
-        linksContainer.style.transition = 'all .5s'
-        linksContainer.style.color = 'red'
-        setTimeout(() => {
-            linksContainer.innerHTML = 'Link will show here...!'
-            linksContainer.style.color = 'black'
-            linksContainer.style.scale = ''
-            linksContainer.style.transition = 'all .5s'
-
-        }, 2000);
+        style1();
     }else{
         var orderno = document.getElementById('dataTextarea').value;
         var url = event + encodeURIComponent(orderno) + encodeURIComponent(format);
