@@ -1,5 +1,60 @@
+
+let aramex = document.querySelector('#aramex');
+let tamex = document.querySelector('#tamex');
+let jonex = document.querySelector('#jonex');
+let postAge = document.querySelector('#postAge')
+let businessFlow = document.querySelector('#businessFlow');
+let dal = document.querySelector('#DAL');
+let dataTextarea = document.querySelector('#dataTextarea');
+let linksContainer = document.getElementById('linksContainer');
+let allLinks = 'https://rashof.fastcoo-solutions.com/fm/Printpicklist3PL/';
+
+
+function makeLink(event){
+    if(dataTextarea.value === ''){
+        linksContainer.innerHTML = 'Please enter a pickup Id.......!'
+        linksContainer.style.color = 'red';
+        linksContainer.style.scale = '1.01';
+        linksContainer.style.fontSize = '18px';
+        linksContainer.style.transition = 'all .5s';
+        setTimeout(() => {
+            linksContainer.innerHTML = 'Link will show here...!'
+            linksContainer.style.color = 'black'
+            linksContainer.style.scale = '1';
+            linksContainer.style.transition = 'all .5s'
+
+        }, 2000);
+    }else{
+        let url = allLinks + dataTextarea.value + "/" + event.target.value;
+         window.open(url, '_blank');
+    }
+}
+
+aramex.addEventListener('click' , makeLink);
+tamex.addEventListener('click' , makeLink);
+jonex.addEventListener('click' , makeLink);
+postAge.addEventListener('click' , makeLink);
+businessFlow.addEventListener('click' , makeLink);
+dal.addEventListener('click' , makeLink);
+
+
 document.getElementById('generateLinks').addEventListener('click', () => {
-    let dataTextarea = document.getElementById('dataTextarea');
+    if(dataTextarea.value == ''){
+        linksContainer.innerHTML = 'Please enter AWB number...!';
+        linksContainer.style.scale = '1.01'
+        linksContainer.style.fontSize = '18px'
+        linksContainer.style.transition = 'all .5s'
+        linksContainer.style.color = 'red'
+        setTimeout(() => {
+            linksContainer.innerHTML = 'Link will show here...!'
+            linksContainer.style.color = 'black'
+            linksContainer.style.scale = ''
+            linksContainer.style.transition = 'all .5s'
+
+        }, 2000);
+
+    }else{
+        let dataTextarea = document.getElementById('dataTextarea');
     let linksContainer = document.getElementById('linksContainer');
 
     // Get data from textarea and split it into an array
@@ -23,10 +78,25 @@ document.getElementById('generateLinks').addEventListener('click', () => {
         linksContainer.appendChild(atag);
         linksContainer.appendChild(document.createElement('br')); // Optional: add line break
     });
+    }
 });
 
 document.getElementById('generateLinksDal').addEventListener('click', () => {
-    let dataTextarea = document.getElementById('dataTextarea');
+    if(dataTextarea.value === ''){
+        linksContainer.innerHTML = 'Please enter AWB number...!';
+        linksContainer.style.scale = '1.01'
+        linksContainer.style.fontSize = '18px'
+        linksContainer.style.transition = 'all .5s'
+        linksContainer.style.color = 'red'
+        setTimeout(() => {
+            linksContainer.innerHTML = 'Link will show here...!'
+            linksContainer.style.color = 'black'
+            linksContainer.style.scale = ''
+            linksContainer.style.transition = 'all .5s'
+
+        }, 2000);
+    }else{
+        let dataTextarea = document.getElementById('dataTextarea');
     let linksContainer = document.getElementById('linksContainer');
 
     // Get data from textarea and split it into an array
@@ -50,74 +120,51 @@ document.getElementById('generateLinksDal').addEventListener('click', () => {
         linksContainer.appendChild(atag);
         linksContainer.appendChild(document.createElement('br')); // Optional: add line break
     });
+    }
+
 });
 
 
-// other section
 
-let dataTextarea = document.getElementById('dataTextarea')
+function orderNo(event) {
+    if(dataTextarea.value === ''){
+        linksContainer.innerHTML = 'Please enter AWB number...!';
+        linksContainer.style.scale = '1.01'
+        linksContainer.style.fontSize = '18px'
+        linksContainer.style.transition = 'all .5s'
+        linksContainer.style.color = 'red'
+        setTimeout(() => {
+            linksContainer.innerHTML = 'Link will show here...!'
+            linksContainer.style.color = 'black'
+            linksContainer.style.scale = ''
+            linksContainer.style.transition = 'all .5s'
 
-function orderNo() {
-    var orderno = document.getElementById('dataTextarea').value;
-
-    var url =
-        'https://web.zid.sa/orders?search=' + encodeURIComponent(orderno);
-
-    // window.location.href = url;
-    window.open(url, '_blank');
+        }, 2000);
+    }else{
+        var orderno = document.getElementById('dataTextarea').value;
+        var url = event + encodeURIComponent(orderno);
+        // window.location.href = url;
+        window.open(url, '_blank');
+    }
 }
+function print(event , format) {
+    if(dataTextarea.value === ''){
+        linksContainer.innerHTML = 'Please enter AWB number...!';
+        linksContainer.style.scale = '1.01'
+        linksContainer.style.fontSize = '18px'
+        linksContainer.style.transition = 'all .5s'
+        linksContainer.style.color = 'red'
+        setTimeout(() => {
+            linksContainer.innerHTML = 'Link will show here...!'
+            linksContainer.style.color = 'black'
+            linksContainer.style.scale = ''
+            linksContainer.style.transition = 'all .5s'
 
-function invoice() {
-    var orderno = document.getElementById('dataTextarea').value;
-
-    var url =
-        'https://web.zid.sa/orders/invoices?order_id=' +
-        encodeURIComponent(orderno);
-
-    // window.location.href = url;
-    window.open(url, '_blank');
-}
-
-function AwbNo() {
-    var awbno = document.getElementById('dataTextarea').value;
-
-    var url =
-        'https://rashof.fastcoo-solutions.com/fm/TrackingDetails/' +
-        encodeURIComponent(awbno);
-
-    // window.location.href = url;
-    window.open(url, '_blank');
-}
-
-function TrakNo() {
-    var trakno = document.getElementById('dataTextarea').value;
-
-    var url =
-        'https://postagexp.com/en/track-order-post?track_number=' +
-        encodeURIComponent(trakno);
-
-    // window.location.href = url;
-    window.open(url, '_blank');
-}
-
-function Traktamex() {
-    var trakno = document.getElementById('dataTextarea').value;
-
-    var url =
-        'https://www.tamex.com.sa/track/' + encodeURIComponent(trakno);
-
-    // window.location.href = url;
-    window.open(url, '_blank');
-}
-
-function Label() {
-    var awbno = document.getElementById('dataTextarea').value;
-
-    var url =
-        'https://rashof.fastcoo-solutions.com/fm/assets/all_labels/' +
-        encodeURIComponent(awbno) +
-        encodeURIComponent('.pdf');
-
-    // window.location.href = url;
-    window.open(url, '_blank');
+        }, 2000);
+    }else{
+        var orderno = document.getElementById('dataTextarea').value;
+        var url = event + encodeURIComponent(orderno) + encodeURIComponent(format);
+        // window.location.href = url;
+        window.open(url, '_blank');
+    }
 }

@@ -18,17 +18,24 @@
 			<div class="btn">
 				<button id="generateLinks">Generate Links Bulk</button>
 				<button id="generateLinksDal">Generate Links DAL</button>
+				<button id="pickupId">Pickup list Links</button>
 				<div class="output-sec">
-					<button id="insidebtn" onclick="orderNo()">
+					<button id="insidebtn" onclick="orderNo('https://web.zid.sa/orders?search=')">
 						<img src="zid-logo.svg" alt="" />Zid Search
 					</button>
-					<button id="insidebtn" onclick="invoice()">
-						<img src="zid-logo.svg" alt="" />Zid Invoice
-					</button>
-					<button id="insidebtn" onclick="AwbNo()">Fastcoo Search</button>
-					<button id="insidebtn" onclick="TrakNo()">Track PostAge</button>
-					<button id="insidebtn" onclick="Traktamex()">Track Tamex</button>
-					<button id="insidebtn" onclick="Label()">Print Label</button>
+					<button id="insidebtn" onclick="orderNo('https://web.zid.sa/orders/invoices?order_id=')"><img src="zid-logo.svg" alt="" />Zid Invoice</button>
+					<button id="insidebtn" onclick="orderNo('https://rashof.fastcoo-solutions.com/fm/TrackingDetails/')">Fastcoo Search</button>
+					<button id="insidebtn" onclick="orderNo('https://postagexp.com/en/track-order-post?track_number=')">Track PostAge</button>
+					<button id="insidebtn" onclick="orderNo('https://www.tamex.com.sa/track/')">Track Tamex</button>
+					<button id="insidebtn" onclick="print('https://rashof.fastcoo-solutions.com/fm/assets/all_labels/', '.pdf')">Print Label</button>
+				</div>
+				<div class="output-sec">
+					<button class="insidebtn" id="aramex" value="1">Aramex</button>
+					<button class="insidebtn" id="tamex" value="2">Tamex</button>
+					<button class="insidebtn" id="jonex" value="18">Jonex</button>
+					<button class="insidebtn" id="postAge" value="20">PostAge</button>
+					<button class="insidebtn" id="businessFlow" value="21">Business Flow</button>
+					<button class="insidebtn" id="DAL" value="22">DAL</button>
 				</div>
 			</div>
 			<p>Created by MD RATAN MIA</p>
