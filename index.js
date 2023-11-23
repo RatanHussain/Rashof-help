@@ -9,8 +9,6 @@ let dataTextarea = document.querySelector('#dataTextarea');
 let linksContainer = document.getElementById('linksContainer');
 let allLinks = 'https://rashof.fastcoo-solutions.com/fm/Printpicklist3PL/';
 
-
-
 // style here
 function style1(){
          linksContainer.innerHTML = 'Please enter a pickup Id.......!';
@@ -36,7 +34,6 @@ function style1(){
         }, 1000);
 }
 
-
 // pickup list bulk print here
 function makeLink(event){
     if(dataTextarea.value === ''){
@@ -54,8 +51,6 @@ jonex.addEventListener('click' , makeLink);
 postAge.addEventListener('click' , makeLink);
 businessFlow.addEventListener('click' , makeLink);
 dal.addEventListener('click' , makeLink);
-
-
 
 
 // Generate bulk link for all courier
@@ -136,6 +131,9 @@ function orderNo(event) {
         window.open(url, '_blank');
     }
 }
+
+
+// for label print only
 function print(event , format) {
     if(dataTextarea.value === ''){
         style1();
