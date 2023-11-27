@@ -2,7 +2,7 @@
 let aramex = document.querySelector('#aramex');
 let tamex = document.querySelector('#tamex');
 let jonex = document.querySelector('#jonex');
-let postAge = document.querySelector('#postAge')
+let postAge = document.querySelector('#postAge');
 let businessFlow = document.querySelector('#businessFlow');
 let dal = document.querySelector('#DAL');
 let dataTextarea = document.querySelector('#dataTextarea');
@@ -43,7 +43,7 @@ function makeLink(event){
         let url = allLinks + dataTextarea.value + "/" + event.target.value;
          window.open(url, '_blank');
     }
-}
+};
 
 aramex.addEventListener('click' , makeLink);
 tamex.addEventListener('click' , makeLink);
