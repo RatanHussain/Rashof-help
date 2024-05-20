@@ -7,9 +7,7 @@ let jonex = document.querySelector('#jonex');
 let postAge = document.querySelector('#postAge');
 let businessFlow = document.querySelector('#businessFlow');
 let dal = document.querySelector('#DAL');
-let dataArea = document.querySelector('#dataTextarea');
-let dataTextarea = dataArea.value.trim();
-
+let dataTextarea = document.querySelector('#dataTextarea');
 let linksContainer = document.getElementById('linksContainer');
 let allLinks = 'https://rashof.fastcoo-solutions.com/fm/Printpicklist3PL/';
 
@@ -42,7 +40,7 @@ function makeLink(event) {
 	if (dataTextarea.value === '') {
 		style1();
 	} else {
-		let url = allLinks + dataTextarea.value + '/' + event.target.value;
+		let url = allLinks + dataTextarea.value.trim() + '/' + event.target.value;
 		window.open(url, '_blank');
 	}
 }
@@ -124,7 +122,7 @@ function orderNo(event) {
 	if (dataTextarea.value === '') {
 		style1();
 	} else {
-		var orderno = document.getElementById('dataTextarea').value;
+		var orderno = document.getElementById('dataTextarea').value.trim();
 		var url = event + encodeURIComponent(orderno);
 		// window.location.href = url;
 		window.open(url, '_blank');
@@ -136,7 +134,7 @@ function print(event, format) {
 	if (dataTextarea.value === '') {
 		style1();
 	} else {
-		var orderno = document.getElementById('dataTextarea').value;
+		var orderno = document.getElementById('dataTextarea').value.trim();
 		var url = event + encodeURIComponent(orderno) + encodeURIComponent(format);
 		// window.location.href = url;
 		window.open(url, '_blank');
