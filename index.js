@@ -8,7 +8,7 @@ let postAge = document.querySelector('#postAge');
 let businessFlow = document.querySelector('#businessFlow');
 let dal = document.querySelector('#DAL');
 let dataArea = document.querySelector('#dataTextarea');
-let dataTextarea = dataArea.trim();
+let dataTextarea = dataArea.value.trim();
 
 let linksContainer = document.getElementById('linksContainer');
 let allLinks = 'https://rashof.fastcoo-solutions.com/fm/Printpicklist3PL/';
