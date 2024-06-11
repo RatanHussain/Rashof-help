@@ -140,3 +140,12 @@ function print(event, format) {
 		window.open(url, '_blank');
 	}
 }
+
+document.getElementById('wa').addEventListener('click', () => {
+	if (dataTextarea.value !== '') {
+		let link = 'https://wa.me/';
+		window.open(link + dataTextarea.value);
+	} else {
+		style1();
+	}
+});
