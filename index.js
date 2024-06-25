@@ -143,7 +143,7 @@ function print(event, format) {
 
 document.getElementById('wa').addEventListener('click', () => {
 	if (dataTextarea.value !== '') {
-		let link = 'https://wa.me/';
+		let link = 'https://wa.me/966';
 		window.open(link + dataTextarea.value);
 	} else {
 		style1();
