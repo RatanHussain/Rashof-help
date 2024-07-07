@@ -20,7 +20,7 @@ function style1() {
 	linksContainer.style.transition = 'all .5s';
 	dataTextarea.style.outline = '5px solid red';
 	dataTextarea.style.color = 'red';
-	dataTextarea.innerHTML = 'Please fill me.';
+	dataTextarea.placeholder = 'Please fill me.';
 	dataTextarea.style.transition = 'all .5s';
 
 	setTimeout(() => {
@@ -31,7 +31,7 @@ function style1() {
 		dataTextarea.style.outline = '';
 		dataTextarea.style.color = '';
 		dataTextarea.style.transition = 'all .5s';
-		dataTextarea.innerHTML = '';
+		dataTextarea.placeholder = '';
 	}, 1000);
 }
 
@@ -143,8 +143,9 @@ function print(event, format) {
 
 document.getElementById('wa').addEventListener('click', () => {
 	if (dataTextarea.value !== '') {
-		let link = 'https://wa.me/966';
-		window.open(link + dataTextarea.value);
+		window.open(
+			`https://web.whatsapp.com/send/?phone=966${dataTextarea.value}&text=hello&type=phone_number&app_absent=0`
+		);
 	} else {
 		style1();
 	}
