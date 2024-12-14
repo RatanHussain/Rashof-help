@@ -11,6 +11,30 @@ let dataTextarea = document.querySelector('#dataTextarea');
 let linksContainer = document.getElementById('linksContainer');
 let allLinks = 'https://rashof.fastcoo-solutions.com/fm/Printpicklist3PL/';
 
+// Aramex Multiple Tracking Button Start
+
+let araTrack = document.getElementById('araTrack');
+
+araTrack.addEventListener('click', AraFunc);
+
+function AraFunc() {
+	let trackingNumber = dataTextarea.value.split('\n');
+	let linkAra =
+		'https://www.aramex.com/sa/en/track/track-results-new?source=aramex&ShipmentNumber=';
+	trackingNumber.map(() => {
+		let newtrack = trackingNumber + ',';
+
+		let finalLink = linkAra + newtrack;
+		console.log(finalLink);
+		window.open(finalLink, '_black');
+	});
+
+
+	console.log('working func');
+}
+
+// Aramex Multiple Tracking Button Start
+
 // style here
 function style1() {
 	linksContainer.innerHTML = 'Please enter a pickup Id.......!';

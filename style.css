@@ -25,7 +25,7 @@
                 display: inline;
                 position: absolute;
                 margin: 20px;
-                #generateLinks , #generateLinksDal, #pickupId, #wa {
+                #generateLinks , #generateLinksDal, #pickupId, #wa, #araTrack {
                     height: 40px;
                     border: 1px solid blueviolet;
                     border-radius: 5px;
