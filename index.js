@@ -28,12 +28,26 @@ function AraFunc() {
 		console.log(finalLink);
 		window.open(finalLink, '_black');
 	});
-
-
-	console.log('working func');
 }
 
-// Aramex Multiple Tracking Button Start
+// Aramex Multiple Tracking Button End
+
+// Print Zid invoice Multiple Tracking Button Start
+
+let inoicesBtn = document.getElementById('inoices');
+
+inoicesBtn.addEventListener('click', () => {
+	let inLink = 'https://web.zid.sa/orders/invoices?order_id=';
+	let orders = dataTextarea.value.split('\n');
+	let newOrders = '';
+	orders.forEach((value, index) => {
+		newOrders = newOrders + value + ',';
+	});
+	console.log(inLink + newOrders);
+	window.open(inLink + newOrders, '_blank');
+});
+
+// Print Zid invoice Multiple Tracking Button End
 
 // style here
 function style1() {
