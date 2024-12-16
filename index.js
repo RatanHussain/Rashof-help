@@ -49,6 +49,22 @@ inoicesBtn.addEventListener('click', () => {
 
 // Print Zid invoice Multiple Tracking Button End
 
+// Print Zid search Multiple Tracking Button Start
+
+let zidsrc = document.getElementById('zidsrc');
+
+zidsrc.addEventListener('click', () => {
+	let inLink = 'https://web.zid.sa/orders?search=';
+	let orders = dataTextarea.value.split('\n');
+	let newOrders = '';
+	orders.forEach((value) => {
+		newOrders = newOrders + value + ' ';
+	});
+	window.open(inLink + newOrders, '_blank');
+});
+
+// Print Zid search Multiple Tracking Button End
+
 // style here
 function style1() {
 	linksContainer.innerHTML = 'Please enter a pickup Id.......!';
@@ -73,7 +89,7 @@ function style1() {
 	}, 1000);
 }
 
-// pickup list bulk print here
+// pickup list bulk print here Start
 function makeLink(event) {
 	if (dataTextarea.value === '') {
 		style1();
