@@ -3,13 +3,11 @@
 // selet all element here.....
 let aramex = document.querySelector('#aramex');
 let tamex = document.querySelector('#tamex');
-let jonex = document.querySelector('#jonex');
-let postAge = document.querySelector('#postAge');
-let businessFlow = document.querySelector('#businessFlow');
-let dal = document.querySelector('#DAL');
 let dataTextarea = document.querySelector('#dataTextarea');
 let linksContainer = document.getElementById('linksContainer');
 let allLinks = 'https://rashof.fastcoo-solutions.com/fm/Printpicklist3PL/';
+let postage = document.getElementById('postage')
+let Fastlo = document.getElementById('Fastlo')
 
 // Aramex Multiple Tracking Button Start
 
@@ -91,9 +89,12 @@ function style1() {
 
 // pickup list bulk print here Start
 function makeLink(event) {
+	console.log('work1')
 	if (dataTextarea.value === '') {
 		style1();
+		console.log('work2')
 	} else {
+		console.log('work3')
 		let url = allLinks + dataTextarea.value.trim() + '/' + event.target.value;
 		window.open(url, '_blank');
 	}
@@ -101,10 +102,8 @@ function makeLink(event) {
 
 aramex.addEventListener('click', makeLink);
 tamex.addEventListener('click', makeLink);
-jonex.addEventListener('click', makeLink);
-postAge.addEventListener('click', makeLink);
-businessFlow.addEventListener('click', makeLink);
-dal.addEventListener('click', makeLink);
+postage.addEventListener('click', makeLink);
+Fastlo.addEventListener('click', makeLink);
 
 // Generate bulk link for all courier
 document.getElementById('generateLinks').addEventListener('click', () => {
